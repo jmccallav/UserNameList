@@ -1,0 +1,22 @@
+
+<div class="alert alert-danger" role="alert" ng-show="main.error">Error creating user information.</div>
+<div class="alert alert-success" role="alert" ng-show="main.success">User created successfully.</div>
+<div class="alert alert-warning" role="alert" ng-show="main.warning">User already exist.</div>
+<section class="well">
+	<form name="myForm">
+		<div class="input-group">
+		  <span class="input-group-addon" id="basic-addon1">@</span>
+		  <input type="text" class="form-control" name="username" ng-model="main.username" placeholder="Username" required>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<button type="button" class="btn btn-primary center-block" ng-disabled="myForm.$invalid" ng-click="main.checkUsername()"><b>Create User</b></button>
+		</div>
+	</form>
+</section>
+
+<section ng-show="main.showList">
+<p>Suggested Username:</p>
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="suggestion in main.suggestionList">{{suggestion}}</li>
+	</ul>
+</section>
